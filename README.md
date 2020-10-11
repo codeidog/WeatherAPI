@@ -1,7 +1,7 @@
 # WeatherAPI
 ## Configuration
 The config.yaml shuld look like so:  
-```
+```YAML
 Key: "fsfsfsfd"  
 #Dev or Prod  
 Mode: "prod"
@@ -13,3 +13,8 @@ Mode: "prod"
 Currently there is only one request available for `/data/2.5/weather`. The script will access current weather data for a specific city.
 
 Default mock response file is `weather_by_city.json`
+
+To run the test clone the repository and run the following command:
+```sh
+python test.py
+```

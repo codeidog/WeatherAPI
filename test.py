@@ -6,11 +6,14 @@ import json
 import os
 class Tests(unittest.TestCase):
     def test_Weather_By_City(self):
+        #Load configuration
         settings = load_config()        
+        #Configure mocking if mode is development
         if(settings['Mode'].lower() == 'dev'):
             mock_get_patcher = patch('Weather.requests.get')
             mock_get = mock_get_patcher.start()
             mock_get.return_value.ok = True
+            #Set the return value
             with open('weather_by_city.json','r') as jsonFile:
                 jsonWeather = json.load(jsonFile)
                 mock_get.return_value = Mock(ok=True)
